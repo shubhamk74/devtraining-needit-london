@@ -3,43 +3,28 @@
         <active>true</active>
         <copy_empty_fields>false</copy_empty_fields>
         <enforce_mandatory_fields>No</enforce_mandatory_fields>
-        <name>NeedIt Transform Map</name>
+        <name>NewTransformMap</name>
         <order>100</order>
         <run_business_rules>false</run_business_rules>
-        <run_script>true</run_script>
+        <run_script>false</run_script>
         <script><![CDATA[(function transformRow(source, target, map, log, isUpdate) {
 
 	// Add your code here
-	gs.info("TRANSFORM - Within the Transform Map Script");
-	
-	var today = new GlideDateTime("2019-02-17 08:00:00");
-	if(source.u_when_needed == ''){
-		target.u_when_needed = today.getDate();
-		gs.info("TRANSFORM - When Needed is "+target.u_when_needed);
-	}
-	if(source.u_request_for == ''){
-		target.u_requested_for = gs.getUserName();
-		gs.info('TRANSFORM - User name is '+target.u_requested_for);
-	}
-	
-	if(source.u_what_needed == ''){
-		target.u_what_needed = 'Legal1';
-	}
 
 })(source, target, map, log, action==="update");]]></script>
-        <source_table>x_58872_needit_needit_staging_table</source_table>
+        <source_table>x_58872_needit_newdataload</source_table>
         <sys_class_name>sys_transform_map</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2019-02-06 05:28:55</sys_created_on>
-        <sys_id>a3899ec0db2323002916da75ca961966</sys_id>
-        <sys_mod_count>15</sys_mod_count>
-        <sys_name>NeedIt Transform Map</sys_name>
+        <sys_created_on>2019-02-17 08:03:40</sys_created_on>
+        <sys_id>3fc6e3abdbab23002916da75ca961951</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>NewTransformMap</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
-        <sys_update_name>sys_transform_map_a3899ec0db2323002916da75ca961966</sys_update_name>
+        <sys_update_name>sys_transform_map_3fc6e3abdbab23002916da75ca961951</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-02-17 07:52:33</sys_updated_on>
+        <sys_updated_on>2019-02-17 08:03:40</sys_updated_on>
         <target_table>x_58872_needit_needit</target_table>
     </sys_transform_map>
 </record_update>
